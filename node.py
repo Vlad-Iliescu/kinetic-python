@@ -6,7 +6,6 @@ from util.storage import Storage
 from util.type import Type
 from util.global_options import write_output
 
-
 class Node(object):
     def __init__(self, var_name=None,  **kwargs):
         """ Node constructor.  Nodes are entities that can be transformed,

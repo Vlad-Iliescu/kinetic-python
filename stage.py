@@ -194,7 +194,6 @@ class Stage(Container):
                 if len(nodes):
                     del self.names[name]
 
-
 if __name__ == '__main__':
     stage = Stage('stage', container='container', width = 578, height=200)
     stage.clear()
