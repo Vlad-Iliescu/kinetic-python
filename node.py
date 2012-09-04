@@ -61,6 +61,7 @@ class Node(object):
 
         self.event_listeners = Storage()
         self._js = ''
+#        self.children = []
 
         self.name = var_name
         self.parent = None
