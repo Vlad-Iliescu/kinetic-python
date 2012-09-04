@@ -64,8 +64,6 @@ class Node(object):
         self._js = ''
 
         self.name = var_name
-        self.class_name = 'Node'
-
         self.parent = None
         self.node_type = None
         self.index = None
@@ -692,7 +690,6 @@ class Node(object):
                         child.draw(canvas)
                     else:
                         child._draw(canvas)
-
 
 if __name__ == '__main__':
     node = Node('node', x=10, y=11, listening=True, drag_bounds={'top': 10}, rotation_deg = 10)
