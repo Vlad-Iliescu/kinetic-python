@@ -162,7 +162,7 @@ class Stage(Container):
         layer.canvas.set_size(self.attrs.width, self.attrs.height)
         layer.buffer_canvas.set_size(self.attrs.width, self.attrs.height)
 
-        layer.draw()
+#        layer.draw()
         self.content.append(layer.canvas.element)
 
     def _add_id(self, node):
