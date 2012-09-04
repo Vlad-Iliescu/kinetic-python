@@ -1,7 +1,6 @@
 __author__ = 'Vlad'
 
 from node import Node
-from util.type import Type
 from util.global_options import Kinetic, write_output
 
 class Container(Node):
@@ -145,7 +144,6 @@ class Container(Node):
     def _set_children_indices(self):
         for n in xrange(len(self.children)):
             self.children[n].index = n
-
 
 if __name__ == '__main__':
     c = Container('container',**{'alpha': 1})

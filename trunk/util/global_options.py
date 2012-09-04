@@ -26,7 +26,7 @@ Kinetic.Global = Storage({
     '_add_temp_node': lambda node : Kinetic.Global.temp_nodes.update({id(node): node}),
     '_remove_temp_node' : lambda node : Kinetic.Global.temp_nodes.update({id(node): None}),
     '_pull_nodes': _pull_nodes,
-    'shapes': Storage(),
+    'Shapes': Storage(),
     'filename': StringIO(),
     'tab': 1
 })
