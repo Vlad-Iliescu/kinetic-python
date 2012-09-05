@@ -2,6 +2,7 @@ __author__ = 'Vlad'
 
 from storage import Storage
 from random import randint
+#from util.image import Image
 
 class Type():
 
@@ -19,7 +20,8 @@ class Type():
             'line_join': 'lineJoin',
             'draw_func': 'drawFunc',
             'clear_before_draw': 'clearBeforeDraw',
-            'corner_radius': 'cornerRadius'
+            'corner_radius': 'cornerRadius',
+            'frame_rate': 'frameRate'
         }
         if col in cols:
             return cols[col]
@@ -45,6 +47,8 @@ class Type():
             return '[%s]' % ', '.join(_s)
         elif val is None:
             return 'undefined'
+        else:
+            return '%s' %val
 
 
     @classmethod
