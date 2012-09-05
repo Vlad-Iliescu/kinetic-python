@@ -35,3 +35,5 @@ class Ellipse(Shape):
                 self.attrs.radius.x = round(kwargs['radius']['x'], 2)
             if 'y' in kwargs['radius']:
                 self.attrs.radius.y = round(kwargs['radius']['y'], 2)
+        else:
+            raise NameError('parameter "radius" is required')

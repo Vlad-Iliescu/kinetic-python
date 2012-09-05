@@ -63,8 +63,12 @@ class Rect(Shape):
     def _parse_rect_config(self, kwargs):
         if 'width' in kwargs:
             self.attrs.width = round(kwargs['width'], 2)
+        else:
+            raise NameError('parameter "width" is required')
         if 'height' in kwargs:
             self.attrs.height = round(kwargs['height'], 2)
+        else:
+            raise NameError('parameter "height" is required')
         if 'corner_radius' in kwargs:
             self.attrs.corner_radius = kwargs['corner_radius']
 

@@ -21,7 +21,14 @@ class Type():
             'draw_func': 'drawFunc',
             'clear_before_draw': 'clearBeforeDraw',
             'corner_radius': 'cornerRadius',
-            'frame_rate': 'frameRate'
+            'frame_rate': 'frameRate',
+            'font_size': 'fontSize',
+            'font_family': 'fontFamily',
+            'font_style': 'fontStyle',
+            'text_fill': 'textFill',
+            'text_stroke': 'textStroke',
+            'text_stroke_width': 'textStrokeWidth',
+            'line_height': 'lineHeight'
         }
         if col in cols:
             return cols[col]
