@@ -47,6 +47,8 @@ def end_block(js='}', file=Kinetic.Global.filename):
     Kinetic.Global.tab -= 1
     file.write('\t'*Kinetic.Global.tab+js+"\n")
 
+def write_js(js, file=Kinetic.Global.filename):
+    file.write('\t'*Kinetic.Global.tab+js+"\n")
 
 def write_to_file(file):
     file = open(file, 'wb')

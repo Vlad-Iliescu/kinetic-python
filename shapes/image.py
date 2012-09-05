@@ -23,6 +23,8 @@ class Image(Shape):
     def _parse_image_config(self, kwargs):
         if 'image' in kwargs:
             self.attrs.image = kwargs['image']
+        else:
+            raise NameError('parameter "image" is required')
         if 'width' in kwargs:
             self.attrs.width = kwargs['width']
         if 'height' in kwargs:

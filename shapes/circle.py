@@ -28,7 +28,8 @@ class Circle(Shape):
         self.attrs.radius = round(radius, 2)
         return '%s.setRadius(%s);' %(self.name, Type.format(self.attrs.radius))
 
-
     def _parse_circle_config(self, kwargs):
         if 'radius' in kwargs:
             self.attrs.radius = round(kwargs['radius'], 2)
+        else:
+            raise NameError('parameter "radius" is required')
