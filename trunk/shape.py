@@ -366,13 +366,14 @@ class Shape(Node):
             if 'blur' in shadow:
                 if Type.is_number(shadow['blur']):
                     self.attrs.shadow.blur = round(shadow['blur'], 2)
-                else:
-                    if 'offset' in shadow['blur']:
-                        self.attrs.shadow.blur = Storage({'offset': Storage()})
-                        if 'x' in shadow['blur']['offset']:
-                            self.attrs.shadow.blur.offset.x = round(shadow['blur']['offset']['x'], 2)
-                        if 'y' in shadow['blur']['offset']:
-                            self.attrs.shadow.blur.offset.y = round(shadow['blur']['offset']['y'], 2)
+            if 'offset' in shadow:
+                self.attrs.shadow.offset = Storage()
+                if 'x' in shadow['offset']:
+                    self.attrs.shadow.offset.x = round(shadow['offset']['x'], 2)
+                if 'y' in shadow['offset']:
+                    self.attrs.shadow.offset.y = round(shadow['offset']['y'], 2)
+            if 'opacity' in shadow:
+                self.attrs.shadow.opacity = round(shadow['opacity'], 2)
 
     def _applyShadow(self, context):
         """Apply shadow.  return true if shadow was applied and false if it was not"""
