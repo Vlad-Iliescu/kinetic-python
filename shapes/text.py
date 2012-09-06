@@ -50,14 +50,133 @@ class Text(Shape):
 
     def get_font_size(self):
         """Get font size"""
-        pass
+        return self.attrs.font_size
 
+    def get_font_style(self):
+        """Get font style"""
+        return self.attrs.font_style
 
+    def get_height(self):
+        """Get height of text box"""
+        return self.attrs.height
 
+    def get_line_height(self):
+        """Get line height"""
+        return self.attrs.line_height
 
+    def get_padding(self):
+        """Get padding"""
+        return self.attrs.padding
 
+    def get_shadow(self):
+        """Get shadow of text or textbox"""
+        return self.attrs.shadow
 
+    def get_text(self):
+        """Get text"""
+        return self.attrs.text
 
+    def get_text_fill(self):
+        """Get text fill color"""
+        return self.attrs.text_fill
+
+    def get_text_height(self):
+        """Get text height in pixels"""
+        return '%s.getTextHeight()' %self.name
+
+    def get_text_stroke(self):
+        """Get text stroke color"""
+        return self.attrs.text_stroke
+
+    def get_text_stroke_width(self):
+        """get text stroke width"""
+        return self.attrs.text_stroke_width
+
+    def get_text_width(self):
+        """Get text width in pixels"""
+        return '%s.getTextWidth()' %self.name
+
+    def get_width(self):
+        """get width of text box"""
+        return self.attrs.width
+
+    @write_output
+    def set_align(self, align):
+        """Set horizontal align of text"""
+        self.attrs.align = align
+        return '%s.setAlign(%s);' %(self.name, Type.format(align))
+
+    @write_output
+    def set_font_family(self, font_family):
+        """Set font family"""
+        self.attrs.font_family = font_family
+        return '%s.setFontFamily(%s);' %(self.name, Type.format(font_family))
+
+    @write_output
+    def set_font_size(self, font_size):
+        """Set font size"""
+        self.attrs.font_size = font_size
+        return '%s.setFontSize(%d)' %(self.name, font_size)
+
+    @write_output
+    def set_font_stroke(self, font_stroke):
+        """Set text stroke color"""
+        self.attrs.font_stroke = font_stroke
+        return '%s.setFontStroke(%s);' %(self.name, Type.format(font_stroke))
+
+    @write_output
+    def set_font_style(self, font_style):
+        """set font style. Can be "normal", "italic", or "bold". "normal" is the default."""
+        self.attrs.font_style = font_style
+        return '%s.setFontStyle(%s);' %(self.name, Type.format(font_style))
+
+    @write_output
+    def set_height(self, height):
+        """set height of text box"""
+        self.attrs.height = round(height, 2)
+        return '%s.setHeight(%s);' %(self.name, Type.format(self.attrs.height))
+
+    @write_output
+    def set_line_height(self, line_height):
+        """Set line height"""
+        self.attrs.line_height = round(line_height, 2)
+        return '%s.setLineHeight(%s);' %(self.name, self.attrs.line_height)
+
+    @write_output
+    def set_padding(self, padding):
+        """Set padding"""
+        self.attrs.padding = padding
+        return '%s.setPadding(%d);' %(self.name, padding)
+
+    @write_output
+    def set_shadow(self, shadow):
+        """Set shadow of text or textbox"""
+        self.attrs.shadow = Storage(shadow)
+        return '%s.setShadow(%s);' %(self.name, Type.format(self.attrs.shadow))
+
+    @write_output
+    def set_text(self, text):
+        """Set text"""
+        self.attrs.text = text
+        return "%s.setText(%s);" %(self.name, Type.format(text))
+
+    @write_output
+    def set_text_fill(self, text_fill):
+        """Set text fill color"""
+        self.attrs.text_fill = text_fill
+        return '%s.setTextFill(%s);' %(self.name, Type.format(text_fill))
+
+    @write_output
+    def set_text_stroke_width(self, text_stroke_width):
+        """Set text stroke width"""
+        self.attrs.text_stroke_width = text_stroke_width
+        return '%s.setTextStrokeWidth(%d);' %(self.name, text_stroke_width)
+
+    @write_output
+    def set_width(self, width):
+        """Set width of text box"""
+        self.attrs.width = round(width, 2)
+        return '%s.setWidth(%s)' %(self.name, Type.format(self.attrs.width))
 
     def _parse_text_config(self, kwargs):
         if 'text' in kwargs:
@@ -88,10 +207,3 @@ class Text(Shape):
             self.attrs.line_height = kwargs['line_height']
         if 'corner_radius' in kwargs:
             self.attrs.corner_radius = kwargs['corner_radius']
-
-
-
-
-
-
-

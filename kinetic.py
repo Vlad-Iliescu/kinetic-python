@@ -6,6 +6,7 @@ from shapes.circle import Circle
 from shapes.ellipse import Ellipse
 from shapes.image import Image as _Image
 from shapes.sprite import Sprite
+from shapes.text import Text
 from stage import Stage
 from layer import Layer
 
@@ -16,6 +17,7 @@ Kinetic.Circle = Circle
 Kinetic.Ellipse = Ellipse
 Kinetic.Image = _Image
 Kinetic.Sprite = Sprite
+Kinetic.Text = Text
 
 if __name__ == '__main__':
     stage = Kinetic.Stage('stage', container='container', width=578, height=200)
@@ -29,10 +31,10 @@ if __name__ == '__main__':
 #                              fill='yellow', stroke='black', stroke_width=4)
 #    layer.add(ellipse)
     from util.image import Image
-    animations = {'idle': [{'x': 2, 'y': 2, 'width': 70, 'height': 119}, {'x': 71, 'y': 2, 'width': 74, 'height': 119},
-            {'x': 146, 'y': 2, 'width': 81, 'height': 119}, {'x': 226, 'y': 2, 'width': 76, 'height': 119}],
-                  'punch': [{ 'x': 2, 'y': 138, 'width': 74, 'height': 122}, {'x': 76, 'y': 138, 'width': 84, 'height': 122},
-                          {'x': 346, 'y': 138, 'width': 120, 'height': 122}] }
+#    animations = {'idle': [{'x': 2, 'y': 2, 'width': 70, 'height': 119}, {'x': 71, 'y': 2, 'width': 74, 'height': 119},
+#            {'x': 146, 'y': 2, 'width': 81, 'height': 119}, {'x': 226, 'y': 2, 'width': 76, 'height': 119}],
+#                  'punch': [{ 'x': 2, 'y': 138, 'width': 74, 'height': 122}, {'x': 76, 'y': 138, 'width': 84, 'height': 122},
+#                          {'x': 346, 'y': 138, 'width': 120, 'height': 122}] }
 #    img = Image('img')
 #    img.onload()
 
@@ -52,6 +54,17 @@ if __name__ == '__main__':
 #
 #    img.end_onload()
 #    img.src('http://www.html5canvastutorials.com/demos/assets/blob-sprite.png')
+
+    t = """COMPLEX TEXT\\n\\n All the world\'s a stage, and all the men and women merely players. They have their exits and their entrances."""
+    text = Kinetic.Text('text', x=190, y=15, text="Simple Text", font_size=30, font_family="Calibri", text_fill='green')
+    text2 = Kinetic.Text('t2', x=100, y=60, stroke='#555', text=t, font_size=14, font_family='Calibri', text_fill='#555',
+                        width=380, padding=20, align='center', font_style='italic',
+                        shadow={'color': 'black', 'blur': 1, 'offset': {'x': 10, 'y': 10}, 'opacity': 0.2},
+                        corner_radius=10, fill='#DDD')
+    layer.add(text)
+    layer.add(text2)
+    stage.add(layer)
+
 
     write_to_file('kin.js')
 
