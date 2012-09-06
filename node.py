@@ -633,10 +633,13 @@ class Node(object):
         if 'opacity' in kwargs:
             self.attrs.opacity = round(kwargs['opacity'], 2)
         if 'scale' in kwargs:
-            if 'x' in kwargs['scale']:
-                self.attrs.scale.x = round(kwargs['scale']['x'], 2)
-            if 'y' in kwargs['scale']:
-                self.attrs.scale.y = round(kwargs['scale']['y'], 2)
+            if Type.is_number(kwargs['scale']):
+                self.attrs.scale.x = self.attrs.scale.y = round(kwargs['scale'], 2)
+            else:
+                if 'x' in kwargs['scale']:
+                    self.attrs.scale.x = round(kwargs['scale']['x'], 2)
+                if 'y' in kwargs['scale']:
+                    self.attrs.scale.y = round(kwargs['scale']['y'], 2)
         if 'rotation' in kwargs:
             self.attrs.rotation = round(kwargs['rotation'])
         if 'rotation_deg' in kwargs:
