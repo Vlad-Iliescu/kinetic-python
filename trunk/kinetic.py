@@ -7,6 +7,10 @@ from shapes.ellipse import Ellipse
 from shapes.image import Image as _Image
 from shapes.sprite import Sprite
 from shapes.text import Text
+from shapes.line import Line
+from shapes.polygon import Polygon
+from shapes.regular_polygon import RegularPolygon
+
 from stage import Stage
 from layer import Layer
 
@@ -18,6 +22,10 @@ Kinetic.Ellipse = Ellipse
 Kinetic.Image = _Image
 Kinetic.Sprite = Sprite
 Kinetic.Text = Text
+Kinetic.Line = Line
+Kinetic.Polygon = Polygon
+Kinetic.RegularPolygon = RegularPolygon
+
 
 if __name__ == '__main__':
     stage = Kinetic.Stage('stage', container='container', width=578, height=200)
@@ -55,16 +63,38 @@ if __name__ == '__main__':
 #    img.end_onload()
 #    img.src('http://www.html5canvastutorials.com/demos/assets/blob-sprite.png')
 
-    t = """COMPLEX TEXT\\n\\n All the world\'s a stage, and all the men and women merely players. They have their exits and their entrances."""
-    text = Kinetic.Text('text', x=190, y=15, text="Simple Text", font_size=30, font_family="Calibri", text_fill='green')
-    text2 = Kinetic.Text('t2', x=100, y=60, stroke='#555', text=t, font_size=14, font_family='Calibri', text_fill='#555',
-                        width=380, padding=20, align='center', font_style='italic',
-                        shadow={'color': 'black', 'blur': 1, 'offset': {'x': 10, 'y': 10}, 'opacity': 0.2},
-                        corner_radius=10, fill='#DDD')
-    layer.add(text)
-    layer.add(text2)
+#    t = """COMPLEX TEXT\\n\\n All the world\'s a stage, and all the men and women merely players. They have their exits and their entrances."""
+#    text = Kinetic.Text('text', x=190, y=15, text="Simple Text", font_size=30, font_family="Calibri", text_fill='green')
+#    text2 = Kinetic.Text('t2', x=100, y=60, stroke='#555', text=t, font_size=14, font_family='Calibri', text_fill='#555',
+#                        width=380, padding=20, align='center', font_style='italic',
+#                        shadow={'color': 'black', 'blur': 1, 'offset': {'x': 10, 'y': 10}, 'opacity': 0.2},
+#                        corner_radius=10, fill='#DDD')
+#    layer.add(text)
+#    layer.add(text2)
+#    stage.add(layer)
+
+#    red = Kinetic.Line('red', points=[73, 70, 340, 23, 450, 60, 500, 20], stroke='red', stroke_width=15,
+#                        line_cap='round', line_join='round')
+#    green = Kinetic.Line('green', points=[73, 70, 340, 23, 450, 60, 500, 20], stroke='green', stroke_width=2,
+#                            line_join='round', dash_array=[33, 10])
+#    blue = Kinetic.Line('blue', points=[73, 70, 340, 23, 450, 60, 500, 20], stroke='blue', stroke_width=10,
+#                        line_cap='round', line_join='round', dash_array=[29, 20, 0, 20])
+#
+#    red.move(0,5)
+#    green.move(0, 55)
+#    blue.move(0, 105)
+#
+#    layer.add(red)
+#    layer.add(green)
+#    layer.add(blue)
+#
+#    p = Kinetic.Polygon('p', points=[73, 192, 73, 160, 340, 23, 500, 109, 499, 139, 342, 93], fill='#00D2FF', stroke='black', stroke_width=5)
+#
+#    layer.add(p)
+
+    rp = Kinetic.RegularPolygon('rp', x=stage.get_width()/2, y=stage.get_height()/2, sides=3, radius=70, fill='red', stroke='black', stroke_width=4)
+    layer.add(rp)
+
     stage.add(layer)
-
-
     write_to_file('kin.js')
 

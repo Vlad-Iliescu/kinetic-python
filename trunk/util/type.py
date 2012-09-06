@@ -28,7 +28,10 @@ class Type():
             'text_fill': 'textFill',
             'text_stroke': 'textStroke',
             'text_stroke_width': 'textStrokeWidth',
-            'line_height': 'lineHeight'
+            'line_height': 'lineHeight',
+            'line_cap': 'lineCap',
+            'dash_array': 'dashArray',
+            'detection_type': 'detectionType'
         }
         if col in cols:
             return cols[col]
