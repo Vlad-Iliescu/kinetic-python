@@ -31,7 +31,10 @@ class Type():
             'line_height': 'lineHeight',
             'line_cap': 'lineCap',
             'dash_array': 'dashArray',
-            'detection_type': 'detectionType'
+            'detection_type': 'detectionType',
+            'num_points': 'numPoints',
+            'outer_radius': 'outerRadius',
+            'inner_radius': 'innerRadius'
         }
         if col in cols:
             return cols[col]
